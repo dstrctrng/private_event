@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = 'private_event'
-  s.version           = '0.0.1'
+  s.version           = '0.0.2'
   s.date              = '2011-12-26'
 
   s.summary     = "Gem hosting and indexing, extracted from the rubygems.org repo"
@@ -21,8 +21,7 @@ Gem::Specification.new do |s|
     README.md
     MIT-LICENSE
     private_event.gemspec
-    bin/members_only
     config/hostess.ru
     server/repo/.gitignore
-  ] + Dir['lib/hostess/**/*']
+  ] + Dir['lib/hostess/**/*'] + Dir['bin/*']
 end
