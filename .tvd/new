@@ -1,0 +1,25 @@
+#!/bin/bash -e
+
+tvd_name=$1; shift
+
+tvd_origin="$(git remote -v | grep ^origin | head -1 | awk '{print $2}')"
+
+git clone https://github.com/HeSYINUvSBZfxqA/tvdinner ../$tvd_name --recursive
+
+cd ../$tvd_name
+tvd/setup
+vi $tvd_name.gemspec
+git add *.gemspec
+git commit -m "initial tvdinner: $tvd_name"
+
+git remote rm origin
+git remote add origin "git@github.com:$(git config github.user)/$tvd_name"
+hub create -d "tvdinner: $tvd_name" -h "https://github.com/$(git config github.user)/$tvd_name"
+git push -u origin master
+
+git remote add tvdinner $tvd_origin
+git fetch tvdinner
+
+git merge tvdinner/master
+git submodule update --init --recursive
+exec bash -i -l

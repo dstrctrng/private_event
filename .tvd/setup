@@ -1,0 +1,16 @@
+#!/bin/bash -e
+
+export tvd_name="$(basename $(pwd))"
+export user_name="$(git config user.name)"
+export user_email="$(git config user.email)"
+export github_user="$(git config github.user)"
+
+gemspec="$tvd_name.gemspec"
+cp tvdinner.template $gemspec
+
+# ghetto
+perl -pe 's{___NAME___}    { $ENV{"tvd_name"} }e' -i $gemspec
+perl -pe 's{___SUMMARY___} { "tvdinner: $ENV{'tvd_name'}" }e' -i $gemspec
+perl -pe 's{___AUTHOR___}  { $ENV{"user_name"} }e' -i $gemspec
+perl -pe 's{___EMAIL___}   { $ENV{"user_email"} }e' -i $gemspec
+perl -pe 's{___HOMEPAGE___}{ "https://github.com/$ENV{'github_user'}/$ENV{'tvd_name'}" }e' -i $gemspec
