@@ -1,3 +1,3 @@
-/.bundle
-/vendor/bundle
+/.bundle/
+/vendor/bundle/
 /*.gem
