@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'lib/hostess/indexer'
+require 'hostess/indexer'
 
 indexer = Hostess::Indexer.new
 

@@ -1,3 +1,10 @@
+PATH
+  remote: .
+  specs:
+    private_event (0.0.1)
+      fog
+      sinatra
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -40,6 +47,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  fog
-  sinatra
+  private_event!
   thin

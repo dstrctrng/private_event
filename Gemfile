@@ -1,5 +1,5 @@
 source :rubygems
 
-gem 'fog'
-gem 'sinatra'
+gemspec
+
 gem 'thin'

@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'lib/hostess/app'
+require 'hostess/app'
 
 map "/" do
   run Hostess::App
