@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+bundle check 2>&- || { bundle install --local && bundle check; }
+exec bundle exec thin start -R config/hostess.ru

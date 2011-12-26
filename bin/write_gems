@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'lib/hostess/indexer'
+
+indexer = Hostess::Indexer.new
+
+ARGV.each do |gem_file|
+  puts "processing #{gem_file}"
+  body = StringIO.new(File.read(gem_file))
+  spec = Gem::Package.open(body, "r", nil) {|pkg| spec = pkg.metadata }
+  indexer.write_gem body, spec
+end
+
+
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'lib/hostess/indexer'
+
+indexer = Hostess::Indexer.new
+indexer.update_index
+
