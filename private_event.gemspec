@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = 'private_event'
-  s.version           = '0.0.2'
+  s.version           = '0.0.3'
   s.date              = '2011-12-26'
 
   s.summary     = "Gem hosting and indexing, extracted from the rubygems.org repo"
@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('sinatra')
   s.add_dependency('fog')
+  s.add_dependency('fpm')
 
   s.files = %w[
     README.md
