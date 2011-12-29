@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    private_event (0.0.4)
+    private_event (0.0.5)
       fog
       fpm
       sinatra
